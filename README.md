@@ -1,8 +1,6 @@
 # Desafio-de-Projeto-Explorando-Padroes-de-Projetos-na-Pratica-com-Java
 Projeto final Bootcamp DIO GFT#3 JAVA
 
-Crie uma solução que explore o conceito de Padrões de Projeto na pŕatica. Para isso, você pode reproduzir um dos projetos que criamos durante as aulas ou, caso se sinta preparado, desenvolver uma nova ideia do zero ;-)
+Criação de um "simulador de combates" entre diversas criaturas selecionadas aleatoriamente através do resultado de uma rolagem de dados (consumido da API http://roll.diceapi.com/). 
 
-Dica: Além dos projetos/repositórios que criamos para este desafio, caso queira explorar novos padrões de projeto digite no Google: “java design patterns github” ou “java design patterns examples”. Com isso, você conhecerá novos padrões e implementações de referência que podem ajudá-lo a dominar esse tema!
-
-Criação de uma "rinha de monstros" utilizando os padrões Strategy e Singleton, além de utilização de conceitos de API para rolagem de dados.
+O programa ainda utiliza os padrões Strategy e Singleton em algumas de suas classes (conforme objetivos do desafio), e possui uma lista de criaturas de fácil alteração.
