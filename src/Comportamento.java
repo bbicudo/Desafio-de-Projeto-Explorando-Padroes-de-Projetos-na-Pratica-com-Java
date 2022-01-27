@@ -4,5 +4,6 @@ public interface Comportamento {
 	public int atacar();
 	public int defender();
 	public int testarPericia();
+	public int causarDano(int qtd, int dado);
 
 }

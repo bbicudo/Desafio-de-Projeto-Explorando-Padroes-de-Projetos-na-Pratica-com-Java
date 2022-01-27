@@ -1,3 +1,4 @@
+import java.util.Objects;
 
 public class Monstro {
 	
@@ -8,16 +9,22 @@ public class Monstro {
 	private int modAtaque;
 	private int classeArmadura;
 	private int iniciativa;
+	private int hp;
+	private int qtdDadosDano;
+	private int dadoDano;
 	
 	public Monstro() {
 	}
 
-	public Monstro(String nome, int modDano, int modAtaque, int classeArmadura, int iniciativa) {
+	public Monstro(String nome, int modDano, int modAtaque, int classeArmadura, int iniciativa, int hp, int qtdDadoDano, int dadoDano) {
 		this.nome = nome;
 		this.modDano = modDano;
 		this.modAtaque = modAtaque;
 		this.classeArmadura = classeArmadura;
 		this.iniciativa = iniciativa;
+		this.hp = hp;
+		this.qtdDadosDano = qtdDadoDano;
+		this.dadoDano = dadoDano;
 	}
 
 	public String getNome() {
@@ -60,6 +67,30 @@ public class Monstro {
 		this.iniciativa = iniciativa;
 	}
 	
+	public int getHp() {
+		return hp;
+	}
+
+	public void setHp(int hp) {
+		this.iniciativa = hp;
+	}
+	
+	public int getQtdDadosDano() {
+		return qtdDadosDano;
+	}
+
+	public void setQtdDadosDano(int qtdDadosDano) {
+		this.qtdDadosDano = qtdDadosDano;
+	}
+		
+	public int getDadoDano() {
+		return dadoDano;
+	}
+
+	public void setDadoDano(int dadoDano) {
+		this.dadoDano = dadoDano;
+	}
+
 	Acao acao = new Acao();
 	
 	public int ataque() {
@@ -78,5 +109,24 @@ public class Monstro {
 		int iniciativaTotal = acao.testarPericia() + this.getIniciativa();
 		
 		return iniciativaTotal;	
+	}
+	
+	@Override
+	public String toString() {
+		return "{" +
+					"nome:'" + nome + '\'' +
+					"modDano:'" + modDano + '\'' +
+					"modAtaque:'" + modAtaque + '\'' +
+					"classeArmadura:'" + classeArmadura + '\'' +
+					"inciativa:'" + iniciativa + '\'' +
+					"hp:'" + hp + '\'' +
+					"qtdDadoDano:'" + qtdDadosDano + '\'' +
+					"dadoDano:'" + dadoDano + '\'' +
+				"}";
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(nome, modDano, modAtaque, classeArmadura, iniciativa, hp);
 	}
 }

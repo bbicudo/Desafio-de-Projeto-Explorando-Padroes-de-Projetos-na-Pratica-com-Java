@@ -2,7 +2,7 @@ import java.io.IOException;
 
 public class Acao implements Comportamento{
 	
-	//Singleton e Implementação de Strategy para atacar (ou se defender) de diferentes formas
+	//Singleton e Implementaï¿½ï¿½o de Strategy para atacar (ou se defender) de diferentes formas
 
 	public static final String URL_GET = "http://roll.diceapi.com/json/d20"; 
 
@@ -52,6 +52,20 @@ public class Acao implements Comportamento{
 		}
 		
 		return pericia;
+	}
+
+	@Override
+	public int causarDano(int qtd, int dado) {
+		int dano = 0;
+		
+		try {
+			dano = rolar.rolarDado(qtd, dado);
+		} catch (IOException | InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return dano;
 	}
 
 }
